@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,6 @@
 }
 
 * { box-sizing:border-box; }
-
 html { scroll-behavior:smooth; }
 
 body {
@@ -28,9 +28,8 @@ body {
   font-family:Inter,Arial,sans-serif;
 }
 
-a { color:inherit; text-decoration:none; }
-
-.wrap { width:min(1120px,92%); margin:auto; }
+a { color:inherit;text-decoration:none; }
+.wrap { width:min(1120px,92%);margin:auto; }
 
 header {
   position:sticky;
@@ -277,10 +276,7 @@ li:before {
   color:var(--purple);
 }
 
-.faq {
-  max-width:760px;
-  margin:auto;
-}
+.faq { max-width:760px;margin:auto; }
 
 .faq details {
   background:#141229;
@@ -331,8 +327,6 @@ footer {
   gap:12px;
   flex-wrap:wrap;
 }
-
-/* PURCHASE MODAL */
 
 .purchase-modal {
   display:none;
@@ -474,13 +468,13 @@ footer {
 <section class="hero wrap">
 <span class="eyebrow">OFFICIAL COSMIC SMP STORE</span>
 
-<h1>CHOOSE YOUR<br>
+<h1>
+CHOOSE YOUR<br>
 <span class="gradient">LEGACY.</span>
 </h1>
 
 <p>
-Upgrade your adventure with exclusive ranks,
-powerful perks and rewards.
+Upgrade your adventure with exclusive ranks, powerful perks and rewards.
 Find your place among the legends of COSMIC SMP.
 </p>
 
@@ -491,6 +485,7 @@ Find your place among the legends of COSMIC SMP.
 </section>
 
 <div class="wrap stats">
+
 <div class="stat">
 <strong>JAVA + BEDROCK</strong>
 <small>SUPPORTED PLAYERS</small>
@@ -505,6 +500,7 @@ Find your place among the legends of COSMIC SMP.
 <strong>EXCLUSIVE</strong>
 <small>IN-GAME PERKS</small>
 </div>
+
 </div>
 
 <section id="ranks" class="wrap">
@@ -583,9 +579,11 @@ PURCHASE OVERLORD
 <p class="notice">
 Confirm actual rank perks and prices with COSMIC SMP staff before publishing.
 </p>
+
 </section>
 
 <section id="how" class="wrap">
+
 <div class="head">
 <small>SIMPLE &amp; SECURE</small>
 <h2>HOW TO PURCHASE</h2>
@@ -593,6 +591,7 @@ Confirm actual rank perks and prices with COSMIC SMP staff before publishing.
 </div>
 
 <div class="steps">
+
 <div class="step">
 <b>01</b>
 <h3>Choose a rank</h3>
@@ -610,16 +609,19 @@ Confirm actual rank perks and prices with COSMIC SMP staff before publishing.
 <h3>Send payment proof</h3>
 <p>WhatsApp opens with your order details. Attach your payment screenshot manually and send it.</p>
 </div>
+
 </div>
 </section>
 
 <section id="faq" class="wrap">
+
 <div class="head">
 <small>NEED HELP?</small>
 <h2>FREQUENTLY ASKED</h2>
 </div>
 
 <div class="faq">
+
 <details>
 <summary>How do I buy a rank?</summary>
 <p>Choose a rank, pay through EasyPaisa, then send your transaction ID and payment screenshot to our WhatsApp number.</p>
@@ -639,20 +641,23 @@ Confirm actual rank perks and prices with COSMIC SMP staff before publishing.
 <summary>Can I get a refund?</summary>
 <p>Ask COSMIC SMP staff about the refund policy before paying.</p>
 </details>
+
 </div>
 </section>
 
 <section class="wrap">
 <div class="cta">
+
 <h2>READY TO BECOME A LEGEND?</h2>
 <p>Your next adventure starts on COSMIC SMP.</p>
 
 <a class="btn"
-href="https://discord.gg/REPLACE_INVITE"
+href="https://discord.gg/kDYF2x74j"
 target="_blank"
 rel="noopener">
 JOIN OUR DISCORD ↗
 </a>
+
 </div>
 </section>
 
@@ -665,36 +670,27 @@ JOIN OUR DISCORD ↗
 </div>
 </footer>
 
-<!-- PURCHASE WINDOW -->
-
-<div class="purchase-modal" id="purchaseModal"
-role="dialog" aria-modal="true">
+<div class="purchase-modal" id="purchaseModal" role="dialog" aria-modal="true" aria-labelledby="purchaseTitle">
 
 <div class="purchase-box">
 
 <div class="close-row">
-<button class="close-btn" onclick="closePurchase()">×</button>
+<button class="close-btn" onclick="closePurchase()" aria-label="Close">×</button>
 </div>
 
 <h2 id="purchaseTitle">COMPLETE YOUR PURCHASE</h2>
 
 <p id="purchaseSummary"></p>
 
-<p>
-<b>1.</b> Send the exact amount to this EasyPaisa number:
-</p>
+<p><b>1.</b> Send the exact amount to this EasyPaisa number:</p>
 
 <div class="pay-number">
 <div>
-<small style="display:block;color:#aaa5c2;font-size:10px">
-EASYPAISA ACCOUNT
-</small>
+<small style="display:block;color:#aaa5c2;font-size:10px">EASYPAISA ACCOUNT</small>
 <strong>03313346418</strong>
 </div>
 
-<button class="btn secondary" onclick="copyEasyPaisa()">
-COPY
-</button>
+<button class="btn secondary" onclick="copyEasyPaisa()">COPY</button>
 </div>
 
 <p>
@@ -703,25 +699,14 @@ WhatsApp will open. Attach your payment screenshot there yourself.
 </p>
 
 <label for="buyerMinecraft">MINECRAFT USERNAME</label>
-<input id="buyerMinecraft"
-placeholder="Your in-game username"
-maxlength="32"
-autocomplete="off">
+<input id="buyerMinecraft" placeholder="Your in-game username" maxlength="32" autocomplete="off">
 
 <label for="buyerTxn">EASYPAISA TRANSACTION ID</label>
-<input id="buyerTxn"
-placeholder="Enter transaction / TID number"
-maxlength="80"
-autocomplete="off">
+<input id="buyerTxn" placeholder="Enter transaction / TID number" maxlength="80" autocomplete="off">
 
 <div class="purchase-actions">
-<button class="btn" onclick="paymentDone()">
-PAYMENT DONE
-</button>
-
-<button class="btn secondary" onclick="closePurchase()">
-CLOSE
-</button>
+<button class="btn" onclick="paymentDone()">PAYMENT DONE</button>
+<button class="btn secondary" onclick="closePurchase()">CLOSE</button>
 </div>
 
 <div class="success" id="paymentSuccess">
@@ -729,8 +714,7 @@ CLOSE
 <h3>✓ PAYMENT DETAILS READY</h3>
 
 <p>
-Your WhatsApp chat is opening.
-Please attach the payment screenshot manually and press Send.
+Your WhatsApp chat is opening. Please attach the payment screenshot manually and press Send.
 Your payment is not verified automatically.
 </p>
 
@@ -742,11 +726,9 @@ OPEN WHATSAPP AGAIN ↗
 COPY ORDER DETAILS
 </button>
 
-<a class="btn"
-id="discordLink"
-href="https://discord.gg/REPLACE_INVITE"
-target="_blank"
-rel="noopener">
+<a class="btn" id="discordLink"
+href="https://discord.gg/kDYF2x74j"
+target="_blank" rel="noopener">
 OPEN DISCORD ↗
 </a>
 
@@ -763,17 +745,13 @@ Never share your EasyPaisa PIN or OTP.
 <script>
 'use strict';
 
-/* STORE SETTINGS */
-
+// STORE SETTINGS
 const EASYPAISA_NUMBER = '03313346418';
-
 const WHATSAPP_NUMBER = '923269209404';
+const DISCORD_INVITE = 'https://discord.gg/kDYF2x74j';
 
-const DISCORD_INVITE = 'https://discord.gg/REPLACE_INVITE';
-
+// Add your Discord User ID here if you want it in copied order details.
 const OWNER_ID = 'YOUR_OWNER_ID';
-
-/* RANK PRICES */
 
 const RANK_PRICES = {
   WARRIOR: 150,
@@ -784,8 +762,6 @@ const RANK_PRICES = {
 let selectedRank = '';
 let orderMessage = '';
 let whatsappUrl = '';
-
-/* OPEN PURCHASE */
 
 function openPurchase(rank) {
 
@@ -802,7 +778,6 @@ function openPurchase(rank) {
   document.getElementById('paymentSuccess').style.display = 'none';
 
   document.getElementById('buyerMinecraft').value = '';
-
   document.getElementById('buyerTxn').value = '';
 
   document.getElementById('purchaseModal').classList.add('open');
@@ -810,15 +785,9 @@ function openPurchase(rank) {
   document.getElementById('buyerMinecraft').focus();
 }
 
-/* CLOSE PURCHASE */
-
 function closePurchase() {
-
   document.getElementById('purchaseModal').classList.remove('open');
-
 }
-
-/* COPY TEXT */
 
 async function copyText(value, successMessage) {
 
@@ -827,7 +796,6 @@ async function copyText(value, successMessage) {
     if (navigator.clipboard && window.isSecureContext) {
 
       await navigator.clipboard.writeText(value);
-
       alert(successMessage);
 
     } else {
@@ -841,18 +809,11 @@ async function copyText(value, successMessage) {
     window.prompt('Copy this text:', value);
 
   }
-
 }
-
-/* COPY EASYPAISA NUMBER */
 
 function copyEasyPaisa() {
-
   copyText(EASYPAISA_NUMBER, 'EasyPaisa number copied!');
-
 }
-
-/* PAYMENT DONE */
 
 function paymentDone() {
 
@@ -865,7 +826,6 @@ function paymentDone() {
   if (!selectedRank || !username || !txn) {
 
     alert('Please enter your Minecraft username and EasyPaisa transaction ID.');
-
     return;
 
   }
@@ -873,131 +833,78 @@ function paymentDone() {
   const amount = RANK_PRICES[selectedRank];
 
   orderMessage = [
-
     '🌌 COSMIC SMP — NEW RANK ORDER',
-
     '',
-
     '👑 OWNER: <@' + OWNER_ID + '>',
-
     '💎 Rank: ' + selectedRank,
-
     '💰 Amount: PKR ' + amount,
-
     '🎮 Minecraft Username: ' + username,
-
     '🧾 EasyPaisa Transaction ID: ' + txn,
-
     '📱 EasyPaisa Number: ' + EASYPAISA_NUMBER,
-
     '📸 PAYMENT STATUS: AWAITING SCREENSHOT',
-
     '',
-
     'Please verify payment before giving the rank.',
-
     'Payment screenshot will be attached manually.'
-
   ].join('\n');
 
   const whatsappMessage = [
-
     'Hello COSMIC SMP! My payment is complete.',
-
     '',
-
     'Rank: ' + selectedRank,
-
     'Amount: PKR ' + amount,
-
     'Minecraft Username: ' + username,
-
     'EasyPaisa Transaction ID: ' + txn,
-
     '',
-
     'Please verify my payment. I will attach my payment screenshot.'
-
   ].join('\n');
 
-  whatsappUrl = 'https://wa.me/' + WHATSAPP_NUMBER +
+  whatsappUrl =
+    'https://wa.me/' + WHATSAPP_NUMBER +
     '?text=' + encodeURIComponent(whatsappMessage);
 
   document.getElementById('paymentSuccess').style.display = 'block';
 
   document.getElementById('discordLink').href = DISCORD_INVITE;
 
-  /* OPEN WHATSAPP */
-
-  const whatsappWindow = window.open(
-    whatsappUrl,
-    '_blank',
-    'noopener,noreferrer'
-  );
+  const whatsappWindow =
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
   if (!whatsappWindow) {
-
     alert('WhatsApp did not open automatically. Use the OPEN WHATSAPP AGAIN button.');
-
   }
-
 }
-
-/* OPEN WHATSAPP AGAIN */
 
 function openWhatsAppAgain() {
 
   if (whatsappUrl) {
-
-    window.open(
-      whatsappUrl,
-      '_blank',
-      'noopener,noreferrer'
-    );
-
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   }
 
 }
-
-/* COPY ORDER DETAILS */
 
 function copyOrder() {
 
   if (orderMessage) {
-
-    copyText(
-      orderMessage,
-      'Order details copied!'
-    );
-
+    copyText(orderMessage, 'Order details copied! Paste them wherever needed.');
   }
 
 }
 
-/* CLOSE WHEN CLICKING OUTSIDE */
-
 document.getElementById('purchaseModal').addEventListener('click', function(event) {
 
   if (event.target.id === 'purchaseModal') {
-
     closePurchase();
-
   }
 
 });
-
-/* ESCAPE KEY */
 
 document.addEventListener('keydown', function(event) {
 
   if (event.key === 'Escape') {
-
     closePurchase();
-
   }
 
 });
-
 </script>
 
 </body>
