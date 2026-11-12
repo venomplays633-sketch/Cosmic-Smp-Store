@@ -4,46 +4,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080817">
 <title>COSMIC SMP | Rank Store</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
-:root{--bg:#080817;--panel:#141229;--purple:#9d5cff;--cyan:#5ce7ff;--text:#f7f4ff;--muted:#aaa5c2;--line:#ffffff20}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Inter:wght@400;600;700;800&display=swap');
+:root{--bg:#080817;--purple:#9d5cff;--cyan:#5ce7ff;--text:#f7f4ff;--muted:#aaa5c2;--line:#ffffff20}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:radial-gradient(ellipse at 50% -15%,#3a2168,transparent 48%),var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(1120px,92%);margin:auto}
-header{position:sticky;top:0;z-index:5;background:#080817dc;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:5;background:#080817ed;border-bottom:1px solid var(--line)}
 nav{height:74px;display:flex;align-items:center;justify-content:space-between}
 .brand{font:900 22px Orbitron;letter-spacing:2px}
 .brand span{color:var(--purple)}
 .navlinks{display:flex;gap:25px;color:var(--muted);font-size:12px;font-weight:800}
-.btn{display:inline-flex;justify-content:center;align-items:center;padding:13px 19px;border-radius:10px;background:linear-gradient(100deg,#8745ed,#b36aff);color:white;font-weight:800;font-size:12px;border:0;cursor:pointer;transition:.2s}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:13px 19px;border-radius:10px;background:linear-gradient(100deg,#8745ed,#b36aff);color:white;font-weight:800;font-size:12px;border:0;cursor:pointer}
 .secondary{background:#ffffff0b;border:1px solid var(--line)}
 .hero{text-align:center;padding:100px 0 75px}
 .eyebrow{display:inline-block;padding:8px 13px;border:1px solid #a66bff66;background:#a66bff15;color:#caa8ff;border-radius:99px;font-size:10px;font-weight:800;letter-spacing:2px}
-h1{font:900 clamp(38px,7vw,76px)/1.08 Orbitron;margin:24px 0 18px;letter-spacing:-2px}
-.gradient{background:linear-gradient(90deg,#fff,#c7a0ff 48%,#65eaff);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1{font:900 clamp(38px,7vw,76px)/1.08 Orbitron;margin:24px 0 18px}
+.gradient{background:linear-gradient(90deg,#fff,#c7a0ff 48%,#65eaff);-webkit-background-clip:text;color:transparent}
 .hero p{max-width:620px;margin:0 auto 28px;color:var(--muted);font-size:15px;line-height:1.8}
 .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:75px}
 .stat,.step{background:#141229;border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
 .stat strong{display:block;font:800 19px Orbitron;color:#d3b4ff}
-.stat small{color:var(--muted);font-size:10px;letter-spacing:1px}
+.stat small{color:var(--muted);font-size:10px}
 section{padding:30px 0 75px}
 .head{text-align:center;margin-bottom:34px}
 .head small{color:var(--cyan);font-weight:800;letter-spacing:3px;font-size:10px}
-.head h2{font:800 clamp(25px,4vw,37px) Orbitron;margin:12px 0}
-.head p{color:var(--muted);font-size:13px}
+.head h2{font:800 clamp(25px,4vw,37px) Orbitron}
+.head p,.step p,.faq p{color:var(--muted);font-size:13px;line-height:1.7}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{position:relative;background:linear-gradient(155deg,#1b1738,#100f20 75%);border:1px solid #ffffff20;border-radius:18px;padding:25px;display:flex;flex-direction:column;min-height:440px}
+.card{background:linear-gradient(155deg,#1b1738,#100f20 75%);border:1px solid #ffffff20;border-radius:18px;padding:25px;display:flex;flex-direction:column;min-height:440px;position:relative}
 .featured{border-color:#a56bff;box-shadow:0 0 40px #9854ff20}
 .ribbon{position:absolute;right:14px;top:14px;background:#9b5cff;padding:6px 9px;border-radius:6px;font-size:9px;font-weight:900}
 .rankicon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:#a45dff20;border:1px solid #a45dff55;font-size:25px}
 .card h3{font:800 20px Orbitron;margin:19px 0 7px}
-.desc{color:var(--muted);font-size:12px;line-height:1.6;min-height:36px}
+.desc{color:var(--muted);font-size:12px;line-height:1.6}
 .price{font:900 29px Orbitron;margin:18px 0 5px}
 .price span{font:600 10px Inter;color:var(--muted)}
 ul{list-style:none;padding:15px 0 20px;margin:10px 0 0;border-top:1px solid var(--line);flex:1}
@@ -53,40 +51,49 @@ li:before{content:"✦";color:var(--cyan);margin-right:10px}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
 .step{text-align:left}
 .step b{font:800 24px Orbitron;color:var(--purple)}
-.step h3{font-size:14px}
-.step p,.faq p{color:var(--muted);font-size:12px;line-height:1.7}
 .faq{max-width:760px;margin:auto}
 .faq details{background:#141229;border:1px solid var(--line);border-radius:12px;padding:17px 20px;margin:10px 0}
 .faq summary{font-weight:700;font-size:13px;cursor:pointer}
-.cta{text-align:center;padding:38px;border:1px solid #a56bff66;border-radius:20px;background:radial-gradient(ellipse at 50% 0,#6839a744,transparent 70%),#15122a}
+.cta{text-align:center;padding:38px;border:1px solid #a56bff66;border-radius:20px;background:#15122a}
 .cta h2{font:800 clamp(22px,4vw,34px) Orbitron}
-.cta p{color:var(--muted);font-size:13px;margin-bottom:22px}
-.notice{text-align:center;color:#8f89a8;font-size:11px;line-height:1.7;margin-top:18px}
+.cta p,.notice{color:var(--muted);font-size:12px}
+.notice{text-align:center;margin-top:18px}
 footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-size:11px}
 .foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media(max-width:800px){.cards,.stats,.steps{grid-template-columns:1fr}.navlinks{display:none}.hero{padding:70px 0 50px}.card{min-height:0}.cta{padding:28px 17px}}
 .purchase-modal{display:none;position:fixed;inset:0;z-index:20;background:#000c;padding:18px;align-items:center;justify-content:center}
 .purchase-modal.open{display:flex}
-.purchase-box{width:min(520px,100%);max-height:92vh;overflow:auto;background:#17142d;border:1px solid #a66aff88;border-radius:18px;padding:24px;box-shadow:0 20px 80px #0009}
-.purchase-box h2{font:800 20px Orbitron;margin:0 0 10px}
+.purchase-box{width:min(520px,100%);max-height:92vh;overflow:auto;background:#17142d;border:1px solid #a66aff88;border-radius:18px;padding:24px}
+.purchase-box h2{font:800 20px Orbitron}
 .purchase-box p{color:var(--muted);font-size:12px;line-height:1.7}
 .pay-number{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px;background:#0d0b1d;border:1px solid #a66aff66;border-radius:12px;margin:16px 0}
-.pay-number strong{font:800 21px Orbitron;letter-spacing:1px}
+.pay-number strong{font:800 21px Orbitron}
 .purchase-box label{display:block;font-size:11px;color:#c9c3dc;font-weight:700;margin:13px 0 7px}
-.purchase-box input{width:100%;padding:12px;border-radius:9px;border:1px solid #ffffff30;background:#0d0b1d;color:white;outline:none}
+.purchase-box input{width:100%;padding:12px;border-radius:9px;border:1px solid #ffffff30;background:#0d0b1d;color:white}
 .purchase-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
 .purchase-actions .btn{flex:1}
-.close-row{display:flex;justify-content:flex-end}
-.close-btn{background:none;border:0;color:#c9c3dc;font-size:23px;cursor:pointer}
-@media(max-width:520px){.pay-number strong{font-size:17px}}
+.close-row{text-align:right}
+.close-btn{background:none;border:0;color:white;font-size:25px;cursor:pointer}
+.success{display:none;margin-top:20px;padding:16px;border:1px solid #5ce7ff66;background:#5ce7ff0d;border-radius:12px}
+.success h3{color:var(--cyan);font-family:Orbitron}
+.success .btn{width:100%;margin-top:10px}
+@media(max-width:800px){.cards,.stats,.steps{grid-template-columns:1fr}.navlinks{display:none}.hero{padding:70px 0 50px}.card{min-height:0}}
 </style>
 </head>
 <body>
-<header><div class="wrap"><nav>
+
+<header>
+<div class="wrap">
+<nav>
 <a class="brand" href="#">COSMIC<span>.</span> SMP</a>
-<div class="navlinks"><a href="#ranks">RANKS</a><a href="#how">HOW TO BUY</a><a href="#faq">FAQ</a></div>
+<div class="navlinks">
+<a href="#ranks">RANKS</a>
+<a href="#how">HOW TO BUY</a>
+<a href="#faq">FAQ</a>
+</div>
 <a class="btn" href="#ranks">VIEW RANKS</a>
-</nav></div></header>
+</nav>
+</div>
+</header>
 
 <main>
 <section class="hero wrap">
@@ -106,49 +113,85 @@ footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-s
 </div>
 
 <section id="ranks" class="wrap">
-<div class="head"><small>UPGRADE YOUR GAME</small><h2>CHOOSE YOUR RANK</h2><p>Unlock perks and stand out on the server.</p></div>
+<div class="head">
+<small>UPGRADE YOUR GAME</small>
+<h2>CHOOSE YOUR RANK</h2>
+<p>Unlock perks and stand out on the server.</p>
+</div>
+
 <div class="cards">
 <article class="card">
-<div class="rankicon">⚔️</div><h3>WARRIOR</h3>
+<div class="rankicon">⚔️</div>
+<h3>WARRIOR</h3>
 <div class="desc">A great start for your COSMIC SMP journey.</div>
 <div class="price">PKR 150 <span>/ ONE TIME</span></div>
-<ul><li>Warrior in-game rank</li><li>Custom chat prefix</li><li>/craft access</li><li>/hat access</li><li>Starter bonus kit</li></ul>
+<ul>
+<li>Warrior in-game rank</li>
+<li>Custom chat prefix</li>
+<li>/craft access</li>
+<li>/hat access</li>
+<li>Starter bonus kit</li>
+</ul>
 <button class="btn" onclick="openPurchase('WARRIOR')">PURCHASE WARRIOR</button>
 </article>
+
 <article class="card featured">
-<span class="ribbon">POPULAR</span><div class="rankicon">💎</div><h3>LEGEND</h3>
+<span class="ribbon">POPULAR</span>
+<div class="rankicon">💎</div>
+<h3>LEGEND</h3>
 <div class="desc">More perks. More style. Become a COSMIC legend.</div>
 <div class="price">PKR 300 <span>/ ONE TIME</span></div>
-<ul><li>Everything in Warrior</li><li>Exclusive LEGEND prefix</li><li>/feed access</li><li>/enderchest access</li><li>/anvil access</li><li>Premium Netherite Kit</li><li>Priority support</li></ul>
+<ul>
+<li>Everything in Warrior</li>
+<li>Exclusive LEGEND prefix</li>
+<li>/feed access</li>
+<li>/enderchest access</li>
+<li>/anvil access</li>
+<li>Premium Netherite Kit</li>
+<li>Priority support</li>
+</ul>
 <button class="btn" onclick="openPurchase('LEGEND')">PURCHASE LEGEND</button>
 </article>
+
 <article class="card">
-<div class="rankicon">👑</div><h3>OVERLORD</h3>
+<div class="rankicon">👑</div>
+<h3>OVERLORD</h3>
 <div class="desc">For players who want the ultimate status.</div>
 <div class="price">PKR 500 <span>/ ONE TIME</span></div>
-<ul><li>Everything in Legend</li><li>Exclusive OVERLORD prefix</li><li>Extra premium kit</li><li>Custom nickname (if enabled)</li><li>Exclusive particles</li><li>Priority ticket support</li></ul>
+<ul>
+<li>Everything in Legend</li>
+<li>Exclusive OVERLORD prefix</li>
+<li>Extra premium kit</li>
+<li>Custom nickname (if enabled)</li>
+<li>Exclusive particles</li>
+<li>Priority ticket support</li>
+</ul>
 <button class="btn" onclick="openPurchase('OVERLORD')">PURCHASE OVERLORD</button>
 </article>
 </div>
-<p class="notice">Sample rank prices and perks — update them to match your actual server configuration before publishing.</p>
+<p class="notice">Confirm actual rank perks and prices with COSMIC SMP staff before publishing.</p>
 </section>
 
 <section id="how" class="wrap">
-<div class="head"><small>SIMPLE & SECURE</small><h2>HOW TO PURCHASE</h2><p>Getting your rank is quick and easy.</p></div>
+<div class="head">
+<small>SIMPLE & SECURE</small>
+<h2>HOW TO PURCHASE</h2>
+<p>Getting your rank is quick and easy.</p>
+</div>
 <div class="steps">
-<div class="step"><b>01</b><h3>Choose a rank</h3><p>Compare the perks and select the rank you want.</p></div>
-<div class="step"><b>02</b><h3>Pay with EasyPaisa</h3><p>Send the exact rank amount to the EasyPaisa number shown at checkout.</p></div>
-<div class="step"><b>03</b><h3>Submit payment proof</h3><p>Send your Minecraft username, transaction ID and payment screenshot to the COSMIC SMP team for verification.</p></div>
+<div class="step"><b>01</b><h3>Choose a rank</h3><p>Compare perks and select your rank.</p></div>
+<div class="step"><b>02</b><h3>Pay with EasyPaisa</h3><p>Send the exact amount to the account shown at checkout.</p></div>
+<div class="step"><b>03</b><h3>Submit payment proof</h3><p>Send your Minecraft username, transaction ID and payment screenshot in your Discord ticket.</p></div>
 </div>
 </section>
 
 <section id="faq" class="wrap">
 <div class="head"><small>NEED HELP?</small><h2>FREQUENTLY ASKED</h2></div>
 <div class="faq">
-<details><summary>How do I buy a rank?</summary><p>Choose a rank, pay through EasyPaisa, then send your transaction ID and payment screenshot to the COSMIC SMP team.</p></details>
-<details><summary>When will I receive my rank?</summary><p>Staff will deliver your rank after confirming payment and your Minecraft username.</p></details>
-<details><summary>Are ranks permanent?</summary><p>These sample listings are marked as one-time purchases. Confirm the actual rank duration with staff before buying.</p></details>
-<details><summary>Can I get a refund?</summary><p>Ask the COSMIC SMP staff team about the refund policy before making a purchase.</p></details>
+<details><summary>How do I buy a rank?</summary><p>Choose a rank, pay through EasyPaisa, then submit your transaction ID and payment screenshot in a support ticket.</p></details>
+<details><summary>When will I receive my rank?</summary><p>Staff will deliver your rank after verifying payment and Minecraft username.</p></details>
+<details><summary>Are ranks permanent?</summary><p>Confirm the actual rank duration with staff before buying.</p></details>
+<details><summary>Can I get a refund?</summary><p>Ask COSMIC SMP staff about the refund policy before paying.</p></details>
 </div>
 </section>
 
@@ -161,64 +204,121 @@ footer{border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-s
 </section>
 </main>
 
-<footer><div class="wrap foot">
+<footer>
+<div class="wrap foot">
 <span>© 2026 COSMIC SMP. All rights reserved.</span>
 <span>NOT AN OFFICIAL MINECRAFT PRODUCT.</span>
-</div></footer>
+</div>
+</footer>
 
 <div class="purchase-modal" id="purchaseModal" role="dialog" aria-modal="true">
 <div class="purchase-box">
 <div class="close-row"><button class="close-btn" onclick="closePurchase()">×</button></div>
 <h2 id="purchaseTitle">COMPLETE YOUR PURCHASE</h2>
-<p id="purchaseSummary">Selected rank and amount will appear here.</p>
-<p><b>1.</b> Open EasyPaisa and send the exact amount to this number:</p>
+<p id="purchaseSummary"></p>
+<p><b>1.</b> Send the exact amount to this EasyPaisa number:</p>
 <div class="pay-number">
-<div><small style="display:block;color:#aaa5c2;font-size:10px;letter-spacing:1px">EASYPAISA ACCOUNT NUMBER</small><strong>03313346418</strong></div>
+<div>
+<small style="display:block;color:#aaa5c2;font-size:10px">EASYPAISA ACCOUNT</small>
+<strong>03313346418</strong>
+</div>
 <button class="btn secondary" onclick="copyEasyPaisa()">COPY</button>
 </div>
-<p><b>2.</b> After payment, enter your details below. Then send the payment screenshot in the WhatsApp chat if available, or in a COSMIC SMP Discord support ticket.</p>
-<label for="buyerMinecraft">MINECRAFT USERNAME</label>
+<p><b>2.</b> After paying, enter your details and continue to Discord. Attach your payment screenshot in the ticket.</p>
+
+<label>MINECRAFT USERNAME</label>
 <input id="buyerMinecraft" placeholder="Your in-game username" maxlength="32">
-<label for="buyerTxn">EASYPAISA TRANSACTION ID</label>
+
+<label>EASYPAISA TRANSACTION ID</label>
 <input id="buyerTxn" placeholder="Enter transaction / TID number" maxlength="80">
+
 <div class="purchase-actions">
-<button class="btn" onclick="sendOrderWhatsApp()">SEND ORDER DETAILS</button>
+<button class="btn" onclick="paymentDone()">PAYMENT DONE</button>
 <button class="btn secondary" onclick="closePurchase()">CLOSE</button>
 </div>
-<p style="font-size:10px;margin-top:14px">Your rank will be added only after staff verifies the payment. Do not share your EasyPaisa PIN or OTP.</p>
+
+<div class="success" id="paymentSuccess">
+<h3>✓ PAYMENT DETAILS READY</h3>
+<p>Payment is not automatically verified. Copy the order details, open Discord, create a purchase ticket and attach your payment screenshot.</p>
+<button class="btn" onclick="copyOrder()">COPY ORDER DETAILS</button>
+<a class="btn" id="discordTicket" href="https://discord.gg/REPLACE_INVITE" target="_blank" rel="noopener">OPEN DISCORD & CREATE TICKET ↗</a>
+</div>
+
+<p style="font-size:10px;margin-top:14px">Staff will deliver your rank only after verifying payment. Never share your EasyPaisa PIN or OTP.</p>
 </div>
 </div>
 
 <script>
-const easyPaisaNumber = '03313346418';
-const rankPrices = {WARRIOR:150, LEGEND:300, OVERLORD:500};
-let selectedRank = '';
+const easyPaisaNumber='03313346418';
+const rankPrices={WARRIOR:150,LEGEND:300,OVERLORD:500};
+
+// Replace these two placeholders with your actual details
+const DISCORD_INVITE='https://discord.gg/REPLACE_INVITE';
+const OWNER_ID='YOUR_OWNER_ID';
+
+let selectedRank='',orderMessage='';
 
 function openPurchase(rank){
- selectedRank=rank;
- document.getElementById('purchaseTitle').textContent='PURCHASE '+rank;
- document.getElementById('purchaseSummary').textContent='Amount to pay: PKR '+rankPrices[rank]+' — one-time payment.';
- document.getElementById('purchaseModal').classList.add('open');
+selectedRank=rank;
+document.getElementById('purchaseTitle').textContent='PURCHASE '+rank;
+document.getElementById('purchaseSummary').textContent='Amount to pay: PKR '+rankPrices[rank]+' — one-time payment.';
+document.getElementById('paymentSuccess').style.display='none';
+document.getElementById('buyerMinecraft').value='';
+document.getElementById('buyerTxn').value='';
+document.getElementById('purchaseModal').classList.add('open');
 }
+
 function closePurchase(){
- document.getElementById('purchaseModal').classList.remove('open');
+document.getElementById('purchaseModal').classList.remove('open');
 }
+
 function copyEasyPaisa(){
- const n=easyPaisaNumber;
- if(navigator.clipboard&&window.isSecureContext){
- navigator.clipboard.writeText(n).then(()=>alert('EasyPaisa number copied!')).catch(()=>alert('EasyPaisa number: '+n));
- }else{alert('EasyPaisa number: '+n)}
+copyText(easyPaisaNumber,'EasyPaisa number copied!');
 }
-function sendOrderWhatsApp(){
- const username=document.getElementById('buyerMinecraft').value.trim();
- const txn=document.getElementById('buyerTxn').value.trim();
- if(!username||!txn){alert('Please enter your Minecraft username and transaction ID.');return;}
- const msg=`Hello COSMIC SMP! I have paid for a rank. Rank: ${selectedRank}. Amount: PKR ${rankPrices[selectedRank]}. Minecraft username: ${username}. EasyPaisa transaction ID: ${txn}. I will attach my payment screenshot here.`;
- window.open('https://wa.me/923313346418?text='+encodeURIComponent(msg),'_blank','noopener');
+
+function paymentDone(){
+const username=document.getElementById('buyerMinecraft').value.trim();
+const txn=document.getElementById('buyerTxn').value.trim();
+
+if(!username||!txn){
+alert('Please enter your Minecraft username and transaction ID.');
+return;
 }
+
+orderMessage=`🌌 COSMIC SMP — NEW RANK ORDER
+
+👑 OWNER: <@${OWNER_ID}>
+💎 Rank: ${selectedRank}
+💰 Amount: PKR ${rankPrices[selectedRank]}
+🎮 Minecraft Username: ${username}
+🧾 EasyPaisa Transaction ID: ${txn}
+📸 PAYMENT STATUS: AWAITING SCREENSHOT
+
+Please verify payment before giving the rank.
+I will attach my payment screenshot in this ticket.`;
+
+document.getElementById('paymentSuccess').style.display='block';
+document.getElementById('discordTicket').href=DISCORD_INVITE;
+}
+
+function copyOrder(){
+copyText(orderMessage,'Order details copied! Paste them in your Discord ticket.');
+}
+
+function copyText(value,message){
+if(navigator.clipboard&&window.isSecureContext){
+navigator.clipboard.writeText(value)
+.then(()=>alert(message))
+.catch(()=>prompt('Copy this text:',value));
+}else{
+prompt('Copy this text:',value);
+}
+}
+
 document.getElementById('purchaseModal').addEventListener('click',e=>{
- if(e.target.id==='purchaseModal')closePurchase();
+if(e.target.id==='purchaseModal')closePurchase();
 });
 </script>
+
 </body>
 </html>
